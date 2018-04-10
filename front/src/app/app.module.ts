@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { DisplayDishesComponent } from './display-dishes/display-dishes.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DisplayDishesComponent
   ],
   imports: [
     BrowserModule
