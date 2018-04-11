@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DishesService} from '../services/dishes.service';
 
 @Component({
   selector: 'app-display-dishes',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-dishes.component.css']
 })
 export class DisplayDishesComponent implements OnInit {
-
-  constructor() { }
+  myDishes: Array<Object> = [];
+  constructor(private dishes: DishesService) { }
 
   ngOnInit() {
+    this.dishes.getList()
+    .subscribe((dishes) => {
+      this.myDishes = dishes;
+    });
   }
-
 }

@@ -1,3 +1,20 @@
 <p>
   display-dishes works!
 </p>
+<article *ngFor="let dish of myDishes">
+  <section class="allDishes">
+    <div class="dishes">
+      <h3>{{dish.name}}</h3>
+      <img [src]="dish.image">
+      <p>{{dish.description}}</p>
+      <strong>{{dish.price}}</strong>
+    </div>
+  </section>
+</article>
+
+<div class="scroll"
+		    infiniteScroll
+		    [infiniteScrollDistance]="2"
+	    [infiniteScrollThrottle]="10"
+		    (scrolled)="getList()">
+</div>
